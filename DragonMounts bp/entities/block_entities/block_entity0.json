@@ -1,0 +1,88 @@
+{
+	"format_version": "1.13.0",
+	"minecraft:entity": {
+		"description": {
+			"identifier": "dragonmounts:block_entity0",
+			"is_spawnable": false,
+			"is_summonable": true,
+			"is_experimental": false
+		},
+		"component_groups": {
+			"dragonmounts:disable_death": {
+				"minecraft:transformation": {
+					"into": "dragonmounts:block_entity0",
+					"delay": 0.0
+				}
+			}
+		},
+		"components": {
+			"minecraft:health": {
+				"value": 0.5,
+				"max": 0.5
+			},
+			"minecraft:collision_box": {
+				"width": 0.0,
+				"height": 0.0
+			},
+			"minecraft:type_family": {
+				"family": [
+					"block_entity"
+				]
+			},
+			"minecraft:custom_hit_test": {
+				"hitboxes": [
+					{
+						"width": 0.0,
+						"height": 0.0,
+						"pivot": [
+							0.0,
+							0.0,
+							0.0
+						]
+					}
+				]
+			},
+			"minecraft:on_death": {
+				"event": "dragonmounts:disable_death",
+				"target": "self"
+			},
+			"minecraft:damage_sensor": {
+				"triggers": [
+					{
+						"on_damage": {
+							"filters": {
+								"all_of": [
+									{
+										"test": "has_damage"
+									}
+								]
+							}
+						},
+						"deals_damage": false
+					}
+				]
+			},
+			"minecraft:despawn": {
+				"filters": {
+					"all_of": [
+						{
+							"test": "has_tag",
+							"subject": "self",
+							"operator": "equals",
+							"value": "onair"
+						}
+					]
+				}
+			}
+		},
+		"events": {
+			"dragonmounts:disable_death": {
+				"add": {
+					"component_groups": [
+						"dragonmounts:disable_death"
+					]
+				}
+			}
+		}
+	}
+}

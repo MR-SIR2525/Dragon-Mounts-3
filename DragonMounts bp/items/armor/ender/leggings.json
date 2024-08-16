@@ -1,0 +1,53 @@
+{
+	"format_version": "1.16.100",
+	"minecraft:item": {
+		"description": {
+			"identifier": "dragonmounts:ender_dragonscale_leggings",
+			"category": "equipment"
+		},
+		"components": {
+			"minecraft:max_stack_size": 1,
+			"minecraft:display_name": {
+				"value": "item.dragonmounts:ender_dragonscale_leggings.name"
+			},
+			"minecraft:armor": {
+				"protection": 7
+			},
+			"minecraft:icon": {
+				"texture": "ender_dragonscale_leggings"
+			},
+			"minecraft:creative_category": {
+				"parent": "itemGroup.name.leggings"
+			},
+			"minecraft:wearable": {
+				"slot": "slot.armor.legs"
+			},
+			"minecraft:durability": {
+				"max_durability": 2264
+			},
+			"minecraft:knockback_resistance": {
+				"protection": 0.1
+			},
+			"minecraft:enchantable": {
+				"value": 40,
+				"slot": "armor_legs"
+			},
+			"minecraft:repairable": {
+				"repair_items": [
+					{
+						"items": [
+							"dragonmounts:ender_dragonscales"
+						],
+						"repair_amount": "query.max_durability * 0.25"
+					},
+					{
+						"items": [
+							"dragonmounts:ender_dragonscale_leggings"
+						],
+						"repair_amount": "context.other->query.remaining_durability + query.max_durability * 0.05"
+					}
+				]
+			}
+		}
+	}
+}

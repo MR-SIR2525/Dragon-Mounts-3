@@ -1,0 +1,62 @@
+{
+	"resource_pack_name": "vanilla",
+	"texture_name": "atlas.terrain",
+	"padding": 8,
+	"num_mip_levels": 4,
+	"texture_data": {
+		"none": {
+			"textures": [ "textures/entity/none" ]
+		},
+		"dragon_nest_block": {
+			"textures": [ "textures/blocks/dragon_nest_block" ]
+		},
+		"block_egg_aether": {
+			"textures": [ "textures/entity/dragon_eggs/aether" ]
+		},
+		"block_egg_enchant": {
+			"textures": [ "textures/entity/dragon_eggs/enchant" ]
+		},
+		"block_egg_ender": {
+			"textures": [ "textures/entity/dragon_eggs/ender" ]
+		},
+		"block_egg_fire": {
+			"textures": [ "textures/entity/dragon_eggs/fire" ]
+		},
+		"block_egg_forest": {
+			"textures": [ "textures/entity/dragon_eggs/forest" ]
+		},
+		"block_egg_ice": {
+			"textures": [ "textures/entity/dragon_eggs/ice" ]
+		},
+		"block_egg_moonlight": {
+			"textures": [ "textures/entity/dragon_eggs/moonlight" ]
+		},
+		"block_egg_nether": {
+			"textures": [ "textures/entity/dragon_eggs/nether" ]
+		},
+		"block_egg_sculk": {
+			"textures": [ "textures/entity/dragon_eggs/sculk" ]
+		},
+		"block_egg_skeleton": {
+			"textures": [ "textures/entity/dragon_eggs/skeleton" ]
+		},
+		"block_egg_storm": {
+			"textures": [ "textures/entity/dragon_eggs/storm" ]
+		},
+		"block_egg_sunlight": {
+			"textures": [ "textures/entity/dragon_eggs/sunlight" ]
+		},
+		"block_egg_terra": {
+			"textures": [ "textures/entity/dragon_eggs/terra" ]
+		},
+		"block_egg_water": {
+			"textures": [ "textures/entity/dragon_eggs/water" ]
+		},
+		"block_egg_wither": {
+			"textures": [ "textures/entity/dragon_eggs/wither" ]
+		},
+		"block_egg_zombie": {
+			"textures": [ "textures/entity/dragon_eggs/zombie" ]
+		}
+	}
+}

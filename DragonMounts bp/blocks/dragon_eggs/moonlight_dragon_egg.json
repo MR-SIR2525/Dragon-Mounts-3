@@ -1,0 +1,89 @@
+{
+	"format_version": "1.16.100",
+	"minecraft:block": {
+		"description": {
+			"identifier": "dragonmounts:moonlight_dragon_egg",
+			"register_to_creative_menu": true,
+			"is_experimental": false
+		},
+		"components": {
+			"minecraft:destroy_time": 0.0,
+			"minecraft:friction": 0.6,
+			"minecraft:explosion_resistance": 9,
+			"minecraft:block_light_emission": 0.125,
+			"minecraft:block_light_absorption": 0.0,
+			"minecraft:geometry": "geometry.dragon_egg",
+			"minecraft:map_color": "#05C3D2",
+			"minecraft:creative_category": {
+				"group": "itemGroup.name.dragonegg",
+				"category": "nature"
+			},
+			"minecraft:on_placed": {
+				"event": "dragonmounts:enable_block_entity",
+				"target": "self"
+			},
+			"minecraft:on_interact": {
+				"event": "dragonmounts:hatching",
+				"target": "self"
+			},
+			"minecraft:flammable": {
+				"flame_odds": 0,
+				"burn_odds": 0
+			},
+			"minecraft:pick_collision": {
+				"origin": [ -8, 0, -8 ],
+				"size": [ 16, 16, 16 ]
+			},
+			"minecraft:entity_collision": {
+				"origin": [ -8, 0, -8 ],
+				"size": [ 16, 16, 16 ]
+			},
+			"minecraft:material_instances": {
+				"*": {
+					"texture": "block_egg_moonlight",
+					"render_method": "alpha_test"
+				}
+			},
+			"minecraft:ticking": {
+				"looping": true,
+				"range": [0.01, 0.01],
+				"on_tick": {
+					"event": "dragonmounts:falling",
+					"target": "self"
+				}
+			}
+		},
+		"events": {
+			"dragonmounts:hatching": {
+				"play_sound": {
+					"sound": "block.end_portal_frame.fill"
+				},
+				"run_command": {
+					"command": [
+						"setblock ~ ~ ~ air",
+						"summon dragonmounts:moonlight_dragon_egg ~ ~0.01 ~"
+					]
+				}
+			},
+			"dragonmounts:enable_block_entity": {
+				"run_command": {
+					"command": [
+						"summon dragonmounts:block_entity0 ~ ~ ~"
+					]
+				}
+			},
+			"dragonmounts:falling": {
+				"run_command": {
+					"command": [
+						"execute @e[type=dragonmounts:block_entity0,r=1] ~ ~ ~ detect ~ ~-1 ~ air 0 setblock ~ ~ ~ air",
+						"execute @e[type=dragonmounts:block_entity0,r=1] ~ ~ ~ detect ~ ~-1 ~ air 0 structure load falling_block.moonlight_dragon_egg ~ ~ ~",
+						"execute @e[type=dragonmounts:block_entity0,r=1] ~ ~ ~ detect ~ ~-1 ~ water 0 setblock ~ ~ ~ air",
+						"execute @e[type=dragonmounts:block_entity0,r=1] ~ ~ ~ detect ~ ~-1 ~ water 0 structure load falling_block.moonlight_dragon_egg ~ ~ ~",
+						"execute @e[type=dragonmounts:block_entity0,r=1] ~ ~ ~ detect ~ ~-1 ~ lava 0 setblock ~ ~ ~ air",
+						"execute @e[type=dragonmounts:block_entity0,r=1] ~ ~ ~ detect ~ ~-1 ~ lava 0 structure load falling_block.moonlight_dragon_egg ~ ~ ~"
+					]
+				}
+			}
+		}
+	}
+}

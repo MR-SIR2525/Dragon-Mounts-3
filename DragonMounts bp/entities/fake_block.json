@@ -1,0 +1,173 @@
+{
+	"format_version": "1.16.0",
+	"minecraft:entity": {
+		"description": {
+			"identifier": "dragonmounts:fake_block",
+			"runtime_identifier": "minecraft:shulker",
+			"is_spawnable": false,
+			"is_summonable": false,
+			"is_experimental": false
+		},
+		"component_groups": {
+			"dragonmounts:cb_1_1": {
+				"minecraft:collision_box": {
+					"width": 1.0,
+					"height": 1.0
+				}
+			},
+			"dragonmounts:cb_0625_00625": {
+				"minecraft:collision_box": {
+					"width": 0.625,
+					"height": 0.0625
+				}
+			},
+			"dragonmounts:cb_075_0125": {
+				"minecraft:collision_box": {
+					"width": 0.75,
+					"height": 0.125
+				}
+			},
+			"dragonmounts:cb_0875_03125": {
+				"minecraft:collision_box": {
+					"width": 0.875,
+					"height": 0.3125
+				}
+			},
+			"dragonmounts:cb_075_01875": {
+				"minecraft:collision_box": {
+					"width": 0.75,
+					"height": 0.1875
+				}
+			},
+			"dragonmounts:cb_0625_0125": {
+				"minecraft:collision_box": {
+					"width": 0.625,
+					"height": 0.125
+				}
+			},
+			"dragonmounts:cb_0375_0125": {
+				"minecraft:collision_box": {
+					"width": 0.375,
+					"height": 0.125
+				}
+			},
+			"dragonmounts:cb_025_00625": {
+				"minecraft:collision_box": {
+					"width": 0.25,
+					"height": 0.0625
+				}
+			},
+			"dragonmounts:despawn": {
+				"minecraft:instant_despawn": {}
+			}
+		},
+		"components": {
+			"minecraft:physics": {},
+			"minecraft:type_family": {
+				"family": [
+					"fake_block"
+				]
+			},
+			"minecraft:custom_hit_test": {
+				"hitboxes": [
+					{
+						"width": 0.0,
+						"height": 0.0,
+						"pivot": [
+							0.0,
+							0.0,
+							0.0
+						]
+					}
+				]
+			},
+			"minecraft:environment_sensor": {
+				"triggers": [
+					{
+						"filters": {
+							"test": "is_riding",
+							"value": false
+						},
+						"event": "dragonmounts:despawn"
+					}
+				]
+			},
+			"minecraft:damage_sensor": {
+				"triggers": [
+					{
+						"deals_damage": false
+					}
+				]
+			},
+			"minecraft:collision_box": {
+				"width": 0.0,
+				"height": 0.0
+			}
+		},
+		"events": {
+			"dragonmounts:cb_1_1": {
+				"add": {
+					"component_groups": [
+						"dragonmounts:cb_1_1"
+					]
+				}
+			},
+			"dragonmounts:cb_0625_00625": {
+				"add": {
+					"component_groups": [
+						"dragonmounts:cb_0625_00625"
+					]
+				}
+			},
+			"dragonmounts:cb_075_0125": {
+				"add": {
+					"component_groups": [
+						"dragonmounts:cb_075_0125"
+					]
+				}
+			},
+			"dragonmounts:cb_0875_03125": {
+				"add": {
+					"component_groups": [
+						"dragonmounts:cb_0875_03125"
+					]
+				}
+			},
+			"dragonmounts:cb_075_01875": {
+				"add": {
+					"component_groups": [
+						"dragonmounts:cb_075_01875"
+					]
+				}
+			},
+			"dragonmounts:cb_0625_0125": {
+				"add": {
+					"component_groups": [
+						"dragonmounts:cb_0625_0125"
+					]
+				}
+			},
+			"dragonmounts:cb_0375_0125": {
+				"add": {
+					"component_groups": [
+						"dragonmounts:cb_0375_0125"
+					]
+				}
+			},
+			"dragonmounts:cb_025_00625": {
+				"add": {
+					"component_groups": [
+						"dragonmounts:cb_025_00625"
+					]
+				}
+			},
+			"dragonmounts:despawn": {
+				"add": {
+					"component_groups": [
+						"dragonmounts:despawn"
+					]
+				}
+			}
+		}
+	}
+}

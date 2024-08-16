@@ -1,0 +1,28 @@
+{
+	"format_version": "1.8.0",
+	"animations": {
+		"animation.dragon.default": {
+			"animation_length": 0.2,
+			"loop": true,
+			"timeline": {
+				"0.0": [
+					"/tag @s remove flying",
+					"/tag @s remove to_catch_player",
+					"/tag @a remove can_catch",
+					"/effect @s resistance 999999 3 true"
+				],
+				"0.08": [
+					"/execute @s[tag=flying] ~ ~ ~ effect @s slow_falling 1 1 true",
+					"/effect @s resistance 999999 3 true"
+				],
+				"0.16": [
+					// "/effect @s clear",
+					"/effect @s resistance 999999 3 true"
+				],
+				"0.18": [
+					"/effect @s resistance 999999 3 true"
+				]
+			}
+		}
+	}
+}

@@ -1,0 +1,79 @@
+**Release Version Update Log**
+
+Dragon Mounts - 1.4.22 (Bedrock)
+
+Posted: September 10, 2022 (UTC)
+
+-Where is my Forest Dragon Egg?  -See it? That is dragon egg with the bright blue particles. Yes, the egg has merged with the sculk vegitation from the dangerous ancient city!
+
+While you're enjoying weekend afternoon tea, we bring you the first Release Version of the Dragon Mounts Mod! This marks the completion of the initial synchronization of the Dragon Mounts Mod Bedrock Edition with Java Edition. As always, we appreciate all your help and input, please report any new bugs and leave your feedback by sending them to §alintha437@gmail.com§r or via the corresponding channel on Discord §adiscord.gg/RKHpyRr6yx§r.
+
+**New Features and Changes: **
+· Nest Blocks
+  · Nest Blocks will be generated as part of some dragon nest structures
+  · In Java Edition, the Nest Block is a mod block officially recognized by the Dragon Mounts Mod to prevent the accidental conversion of dragon eggs into other breeds during the hatching process, although the current Bedrock Edition Dragon Mounts Mod has not yet added the Related features of dragon egg environmental transformation breeds
+
+  · Hatching dragon eggs now determine whether entities can pass through them based on the presence of the model blocks
+  · Added the way to get Sculk Dragon Eggs, now you can get Sculk Dragon Eggs in the hatching state by inducing the Warden to infect the Forest Dragon Egg in the hatching state
+  · Added an interaction method, now you can interact with hatching dragon eggs by "Sneaking + Right Click" to convert it back to the block state dragon egg
+  · Added dragon egg activation hatching sound
+  · Eggs in hatching state are now highlighted instead of flashing red when damaged
+  · Eggs in hatching state will no longer be knockback when attacked
+  · Block dragon egg mining time changed to instant mining to synchronize with Java Edition
+  · Hatching dragon eggs no longer have a mob-like death animation when completely destroyed by an attack, to synchronize with Java Edition
+
+· Dragons
+  · Made detailed changes to dragon animation to make it more physical
+  · Adjusted the dragon's sound so it's not too loud
+  · Implemented new death animations and sound effects to synchronize Java Edition
+  · Dragons no longer drop experience and dragon scales when they die, providing a reasonable setting for the addition of dragon essences in the future
+  · Flight control system optimization
+  · Use new glide sound effects when gliding for dragons
+  · Baby dragons can now follow adult dragons to synchronize Java Edition
+  · When the player is riding, if they are sitting, they will switch to standing to synchronize Java Edition
+  · Dragons will stand up if it is sitting down when injured, and will fight back if the attacker is not the owner of the dragon to synchronize Java Edition
+  · Added different additional effects for dragons to synchronize Java Edition
+  · Some dragons use different variant models to synchronize Java Edition
+
+· Dragon Nests
+  · Ported Dragon Nests that was not ported in the original Java Edition to synchronize Java Edition
+  · Zombie Dragon Nests changed from Overworld spawning to Nether spawning
+  · Wither Dragon Nests is now properly removed
+  · Dragon Nests spawn rate adjusted to make it spawn more balanced
+
+· Dragonscale Equipment
+  · The additional attributes of the Ender Dragon Scale Armors are increased from the original only resistance by 3 levels, to the strength is increased by 1 level
+  · The additional attributes of the Zombie Dragon Scale Armors have been increased from the original strength level 1 to strength level 3
+  · The additional attributes of the Enchant Dragon Scale Armors are increased from the original jump boost level 2 to jump level 6
+  · The additional attributes of the Ice Dragon Scale Armors have been increased from the original 5*5*5 area of effect to 9*9*9 area of effect
+
+· UI
+  · Added entry "Violators" to the built-in intro UI to record people who severely violate mod community rules
+	
+**Known Issues: **
+· When a dragon is in heat and tries to breed, it still fails to spawn a dragon egg
+
+**Features and Bug Fixes: **
+· Mobs
+  · The dragon visual model is no longer unexpectedly hidden when the dragon collision box is out of the player's field of view
+  · Fixed an issue where dragons and hatching dragon eggs disappeared unexpectedly
+  · Baby dragons no longer accidentally ride adult dragons
+  · Fixed an issue that exploded unexpectedly when firing fireballs and dragon breaths while riding a dragon
+  · Fixed incorrect appearance of dragons when equipped with saddles, armors, chests
+  · Fixed a problem with incorrect particle offset when some breeds dragons were equipped with saddles
+  · Fixed an issue that some breeds dragon translucent highlight rendering was incorrectly culled
+
+· Items
+  · Diamond scissors are now correctly registered in the creative mode menu bar corresponding to the equipment category
+  · The issue where the dragon scale tools could not speed up mining in some versions of the game version 1.19 has been fixed
+  · Fixed an issue that the Dragon Scale Tools did not work on block mining for game version 1.17 and above updates
+
+· Structures
+  · Wither Dragon Nests is now correctly removed
+
+· Texts
+  · Fixed some English text translation issues
+
+· Stability and Performance
+  · Compatibility improvement, replacing most of the features implemented by "player.json", this mod can now be used in parallel with most other mods
+  · Fixed some performance issues

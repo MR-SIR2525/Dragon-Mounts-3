@@ -1,0 +1,15 @@
+{
+	"format_version": "1.8.0",
+	"animations": {
+		"animation.items.root": {
+			"animation_length": 10,
+			"loop": true,
+			"timeline": {
+				"0.0": [
+					"/execute @s[type=item,name=\"§ddouble_edged_axe_item§r\",tag=!double_edged_axe_item] ~ ~ ~ tag @s add double_edged_axe_item",
+					"/execute @s[type=item,name=\"§d双刃镰斧§r\",tag=!double_edged_axe_item] ~ ~ ~ tag @s add double_edged_axe_item"
+				]
+			}
+		}
+	}
+}

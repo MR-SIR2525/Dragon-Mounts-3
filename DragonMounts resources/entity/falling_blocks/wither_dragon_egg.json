@@ -1,0 +1,22 @@
+{
+	"format_version": "1.10.0",
+	"minecraft:client_entity": {
+		"description": {
+			"identifier": "dragonmounts:falling_block.wither_dragon_egg",
+			"materials": {
+				"dragon_egg": "dragon_egg",
+				"death": "entity_dissolve_layer1.skinning"
+			},
+			"textures": {
+				"dragon_egg": "textures/entity/dragon_eggs/wither"
+			},
+			"geometry": {
+				"dragon_egg": "geometry.dragon_egg"
+			},
+			"render_controllers": [
+				{ "controller.render.wither_dragon_egg": "query.death_ticks < 1.0" },
+				{ "controller.render.wither_dragon_egg_death": "query.death_ticks >= 1.0" }
+			]
+		}
+	}
+}

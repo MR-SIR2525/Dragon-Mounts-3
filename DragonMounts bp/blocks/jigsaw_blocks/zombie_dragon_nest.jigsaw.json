@@ -1,0 +1,177 @@
+{
+	"format_version": "1.16.100",
+	"minecraft:block": {
+		"description": {
+			"identifier": "dragonmounts:jigsaw.zombie_dragon_nest",
+			"register_to_creative_menu": false,
+			"is_experimental": false,
+			"properties": {
+				"dragonmounts:facing_direction": [
+					0,
+					1,
+					2,
+					3,
+					4,
+					5,
+					6
+				],
+				"dragonmounts:ticking": [
+					0,
+					1
+				]
+			}
+		},
+		"permutations": [
+			{
+				"condition": "query.block_property('dragonmounts:ticking') == 1", // ticking default
+				"components": {
+					"minecraft:ticking": {
+						"looping": true,
+						"range": [2, 2],
+						"on_tick": {
+							"event": "dragonmounts:structure_place",
+							"target": "self"
+						}
+					}
+				}
+			},
+			{
+				"condition": "query.block_property('dragonmounts:facing_direction') == 0", // default
+				"components": {
+					"minecraft:rotation": [
+						90,
+						0,
+						0
+					]
+				}
+			},
+			{
+				"condition": "query.block_property('dragonmounts:facing_direction') == 1", // down
+				"components": {
+					"minecraft:rotation": [
+						0,
+						0,
+						0
+					]
+				}
+			},
+			{
+				"condition": "query.block_property('dragonmounts:facing_direction') == 2", // up
+				"components": {
+					"minecraft:rotation": [
+						180,
+						0,
+						0
+					]
+				}
+			},
+			{
+				"condition": "query.block_property('dragonmounts:facing_direction') == 3", // north
+				"components": {
+					"minecraft:rotation": [
+						90,
+						0,
+						0
+					]
+				}
+			},
+			{
+				"condition": "query.block_property('dragonmounts:facing_direction') == 4", // south
+				"components": {
+					"minecraft:rotation": [
+						-90,
+						0,
+						180
+					]
+				}
+			},
+			{
+				"condition": "query.block_property('dragonmounts:facing_direction') == 5", // west
+				"components": {
+					"minecraft:rotation": [
+						0,
+						90,
+						-90
+					]
+				}
+			},
+			{
+				"condition": "query.block_property('dragonmounts:facing_direction') == 6", // east
+				"components": {
+					"minecraft:rotation": [
+						0,
+						-90,
+						90
+					]
+				}
+			}
+		],
+		"components": {
+			"minecraft:unit_cube": {},
+			"minecraft:destroy_time": 1000000,
+			"minecraft:explosion_resistance": 3600000.0,
+			"minecraft:block_light_emission": 0.0,
+			"minecraft:block_light_absorption": 1.0,
+			"minecraft:map_color": "#999999",
+			"minecraft:on_player_placing": {
+				"event": "dragonmounts:facing_direction"
+			},
+			"minecraft:on_interact": {
+				"event": "null",
+				"target": "self"
+			},
+			"minecraft:ticking": {
+				"looping": true,
+				"range": [2, 2],
+				"on_tick": {
+					"event": "dragonmounts:structure_place",
+					"target": "self"
+				}
+			},
+			"minecraft:material_instances": {
+				"jigsaw_side": {
+					"texture": "jigsaw_side",
+					"render_method": "opaque"
+				},
+				"jigsaw_front": {
+					"texture": "jigsaw_front",
+					"render_method": "opaque"
+				},
+				"jigsaw_back": {
+					"texture": "jigsaw_back",
+					"render_method": "opaque"
+				},
+				"jigsaw_lock": {
+					"texture": "jigsaw_lock",
+					"render_method": "opaque"
+				},
+				"up": "jigsaw_front",
+				"down": "jigsaw_back",
+				"north": "jigsaw_lock",
+				"south": "jigsaw_side",
+				"west": "jigsaw_side",
+				"east": "jigsaw_side"
+			}
+		},
+		"events": {
+			"dragonmounts:facing_direction": {
+				"sequence": [
+					{
+						"set_block_property": {
+							"dragonmounts:facing_direction": "(query.cardinal_player_facing + 1)"
+						}
+					}
+				]
+			},
+			"dragonmounts:structure_place": {
+				"run_command": {
+					"command": [
+						"structure load zombie_dragon_nest_je0 ~-3 ~-13 ~-3",
+						"setblock ~ ~ ~ air"
+						// "title @p actionbar §aticking successful!"
+					]
+				}
+			}
+		}
+	}
+}

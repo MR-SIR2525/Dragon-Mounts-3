@@ -1,0 +1,30 @@
+{
+	"format_version": 2,
+	"header": {
+		"name": "§lDragon Mounts 3 §eNests Pack",
+		"description": "Please be sure to open the §cExperiment Option§r before loading this Addon ~",
+		"uuid": "88439c16-0cbf-4394-a033-60ac6c5a889a",
+		"version": [1, 4, 26],
+		"min_engine_version": [1, 20, 30],
+		"pack_scope": "world"
+	},
+	"modules": [
+		{
+			"description": "By.Lintha",
+			"uuid": "9f7d7352-a4ca-402b-889c-6249e54aa7ab",
+			"version": [1, 4, 26],
+			"type": "data"
+		}
+	],
+    "metadata": {
+        "authors": [
+			"Lintha"
+        ]
+    },
+	"dependencies": [
+		{
+			"version": [1, 4, 26],
+			"uuid": "eb5b4b76-e570-4d7e-8d8f-dc011d0fa899"
+		}
+	]
+}

@@ -1,0 +1,1 @@
+execute @e[type=dragonmounts:clear_barrier] ~ ~ ~ kill @e[type=xp_orb,r=2]

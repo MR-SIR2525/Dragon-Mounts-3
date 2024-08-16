@@ -1,0 +1,14 @@
+execute @e[tag=aether_1,tag=aether_2,tag=aether_3,tag=aether_4] ~ ~ ~ function aether_effect
+execute @e[tag=enchant_1,tag=enchant_2,tag=enchant_3,tag=enchant_4] ~ ~ ~ function enchant_effect
+execute @e[tag=ender_1,tag=ender_2,tag=ender_3,tag=ender_4] ~ ~ ~ function ender_effect
+execute @e[tag=fire_1,tag=fire_2,tag=fire_3,tag=fire_4] ~ ~ ~ function fire_effect
+execute @e[tag=forest_1,tag=forest_2,tag=forest_3,tag=forest_4] ~ ~ ~ function forest_effect
+execute @e[tag=ice_1,tag=ice_2,tag=ice_3,tag=ice_4] ~ ~ ~ function ice_effect
+execute @e[tag=moonlight_1,tag=moonlight_2,tag=moonlight_3,tag=moonlight_4] ~ ~ ~ function moonlight_effect
+execute @e[tag=nether_1,tag=nether_2,tag=nether_3,tag=nether_4] ~ ~ ~ function nether_effect
+execute @e[tag=sculk_1,tag=sculk_2,tag=sculk_3,tag=sculk_4] ~ ~ ~ function sculk_effect
+execute @e[tag=storm_1,tag=storm_2,tag=storm_3,tag=storm_4] ~ ~ ~ function storm_effect
+execute @e[tag=sunlight_1,tag=sunlight_2,tag=sunlight_3,tag=sunlight_4] ~ ~ ~ function sunlight_effect
+execute @e[tag=terra_1,tag=terra_2,tag=terra_3,tag=terra_4] ~ ~ ~ function terra_effect
+execute @e[tag=water_1,tag=water_2,tag=water_3,tag=water_4] ~ ~ ~ function water_effect
+execute @e[tag=zombie_1,tag=zombie_2,tag=zombie_3,tag=zombie_4] ~ ~ ~ function zombie_effect

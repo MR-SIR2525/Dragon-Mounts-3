@@ -1,0 +1,78 @@
+{
+	"format_version": "1.14.0",
+	"minecraft:entity": {
+		"description": {
+			"identifier": "dragonmounts:clear_barrier",
+			"is_spawnable": false,
+			"is_summonable": true,
+			"is_experimental": false
+		},
+		"component_groups": {
+			"dragonmounts:start_clear": {
+				"minecraft:timer": {
+					"time": 12.0,
+					"looping": true,
+					"time_down_event": {
+						"event": "dragonmounts:clearing",
+						"target": "self"
+					}
+				}
+			},
+			"dragonmounts:despawn": {
+				"minecraft:despawn": {}
+			}
+		},
+		"components": {
+			"minecraft:fire_immune": true,
+			"minecraft:persistent": {},
+			"minecraft:type_family": {
+				"family": [
+					"dragonmounts"
+				]
+			},
+			"minecraft:health": {
+				"value": 16,
+				"max": 16
+			},
+			"minecraft:knockback_resistance": {
+				"value": 100,
+				"max": 100
+			},
+			"minecraft:damage_sensor": {
+				"triggers": {
+					"cause": "all",
+					"deals_damage": false
+				}
+			},
+			"minecraft:collision_box": {
+				"width": 0.0,
+				"height": 0.0
+			},
+			"minecraft:physics": {
+				"has_gravity": false,
+				"has_collision": false
+			}
+		},
+		"events": {
+			"minecraft:entity_spawned": {
+				"add": {
+					"component_groups": [
+						"dragonmounts:start_clear"
+					]
+				}
+			},
+			"dragonmounts:clearing": {
+				"run_command": {
+					"command": [
+						"fill ~ ~ ~ ~ ~1 ~ air 0 replace dragonmounts:barrier"
+					]
+				},
+				"add": {
+					"component_groups": [
+						"dragonmounts:despawn"
+					]
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,30 @@
+{
+	"format_version": 2,
+	"header": {
+		"name": "§lDragon Mounts 3 §aPREVIEW 1.4.26",
+		"description": "Please be sure to open the §cExperiment Option§r before loading this Addon ~",
+		"uuid": "18b40e43-faf1-4a38-ac37-2c0fdeb77b16",
+		"version": [1, 4, 26],
+		"min_engine_version": [1, 16, 100],
+		"pack_scope": "world"
+	},
+	"modules": [
+		{
+			"description": "By.Lintha",
+			"uuid": "22f1447f-d746-4824-9bcb-5d9b09e16320",
+			"version": [1, 4, 26],
+			"type": "data"
+		}
+	],
+    "metadata": {
+        "authors": [
+			"Lintha"
+        ]
+    },
+	"dependencies": [
+		{
+			"version": [1, 4, 26],
+			"uuid": "eb5b4b76-e570-4d7e-8d8f-dc011d0fa899"
+		}
+	]
+}
