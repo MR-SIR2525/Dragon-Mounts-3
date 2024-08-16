@@ -1,30 +1,30 @@
 {
-	"format_version": "1.10.0",
-	"animation_controllers": {
-		"controller.animation.dragon.default": {
-			"states": {
-				"default": {
-					"transitions": [
-						{
-							"default_back": "(1)"
-						}
-					],
-					"on_entry": [
-						"/tag @s add dragonmounts",
-						"/effect @s resistance 999999 3 true",
-						"/execute as @s at @s if block ~ ~-6 ~ air if block ~ ~-5 ~ air if block ~ ~-4 ~ air if block ~ ~-3 ~ air if block ~ ~-2 ~ air if block ~ ~-1 ~ air if block ~ ~ ~ air run tag @s add flying",
-						"@s dragonmounts:dragon_hasarmor",
-						"@s dragonmounts:dragon_flying_b"
-					]
-				},
-				"default_back": {
-					"transitions": [
-						{
-							"default": "(1)"
-						}
-					]
-				}
-			}
-		}
-	}
+  "format_version": "1.10.0",
+  "animation_controllers": {
+    "controller.animation.dragon.default": {
+      "states": {
+        "default": {
+          "transitions": [
+            {
+              "default_back": "(1)"
+            }
+          ],
+          "on_entry": [
+            "/tag @s add dragonmounts",
+            "/effect @s resistance 999999 3 true",
+            "/execute as @s at @s if block ~ ~-6 ~ air if block ~ ~-5 ~ air if block ~ ~-4 ~ air if block ~ ~-3 ~ air if block ~ ~-2 ~ air if block ~ ~-1 ~ air if block ~ ~ ~ air run tag @s add flying",
+            "@s dragonmounts:dragon_hasarmor",
+            "@s dragonmounts:dragon_flying_b"
+          ]
+        },
+        "default_back": {
+          "transitions": [
+            {
+              "default": "(1)"
+            }
+          ]
+        }
+      }
+    }
+  }
 }

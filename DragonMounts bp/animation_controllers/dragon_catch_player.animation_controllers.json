@@ -1,28 +1,28 @@
 {
-	"format_version": "1.10.0",
-	"animation_controllers": {
-		"controller.animation.dragon.catch_player": {
-			"states": {
-				"default": {
-					"transitions": [
-						{
-							"catch": "!query.has_rider && !query.is_sitting"
-						}
-					]
-				},
-				"catch": {
-					"transitions": [
-						{
-							"default": "!query.has_rider && !query.is_sitting"
-						}
-					],
-					"on_entry": [
-						"/execute as @p[r=64] at @s if block ~ ~-12 ~ air if block ~ ~-11 ~ air if block ~ ~-10 ~ air if block ~ ~-9 ~ air if block ~ ~-8 ~ air if block ~ ~-7 ~ air if block ~ ~-6 ~ air if block ~ ~-5 ~ air if block ~ ~-4 ~ air if block ~ ~-3 ~ air if block ~ ~-2 ~ air if block ~ ~-1 ~ air if block ~ ~ ~ air run tag @s add can_catch",
-						"/execute as @p[r=64] at @s if block ~ ~-12 ~ air if block ~ ~-11 ~ air if block ~ ~-10 ~ air if block ~ ~-9 ~ air if block ~ ~-8 ~ air if block ~ ~-7 ~ air if block ~ ~-6 ~ air if block ~ ~-5 ~ air if block ~ ~-4 ~ air if block ~ ~-3 ~ air if block ~ ~-2 ~ air if block ~ ~-1 ~ air if block ~ ~ ~ air run tag @s remove cannot_catch",
-						"/execute as @p[r=64] at @s if block ~ ~-12 ~ air if block ~ ~-11 ~ air if block ~ ~-10 ~ air if block ~ ~-9 ~ air if block ~ ~-8 ~ air if block ~ ~-7 ~ air if block ~ ~-6 ~ air if block ~ ~-5 ~ air if block ~ ~-4 ~ air if block ~ ~-3 ~ air if block ~ ~-2 ~ air if block ~ ~-1 ~ air if block ~ ~ ~ air run ride @s[m=!c] start_riding @e[tag=dragonmounts,c=1] teleport_ride"
-					]
-				}
-			}
-		}
-	}
+  "format_version": "1.10.0",
+  "animation_controllers": {
+    "controller.animation.dragon.catch_player": {
+      "states": {
+        "default": {
+          "transitions": [
+            {
+              "catch": "!query.has_rider && !query.is_sitting"
+            }
+          ]
+        },
+        "catch": {
+          "transitions": [
+            {
+              "default": "!query.has_rider && !query.is_sitting"
+            }
+          ],
+          "on_entry": [
+            "/execute as @p[r=64] at @s if block ~ ~-12 ~ air if block ~ ~-11 ~ air if block ~ ~-10 ~ air if block ~ ~-9 ~ air if block ~ ~-8 ~ air if block ~ ~-7 ~ air if block ~ ~-6 ~ air if block ~ ~-5 ~ air if block ~ ~-4 ~ air if block ~ ~-3 ~ air if block ~ ~-2 ~ air if block ~ ~-1 ~ air if block ~ ~ ~ air run tag @s add can_catch",
+            "/execute as @p[r=64] at @s if block ~ ~-12 ~ air if block ~ ~-11 ~ air if block ~ ~-10 ~ air if block ~ ~-9 ~ air if block ~ ~-8 ~ air if block ~ ~-7 ~ air if block ~ ~-6 ~ air if block ~ ~-5 ~ air if block ~ ~-4 ~ air if block ~ ~-3 ~ air if block ~ ~-2 ~ air if block ~ ~-1 ~ air if block ~ ~ ~ air run tag @s remove cannot_catch",
+            "/execute as @p[r=64] at @s if block ~ ~-12 ~ air if block ~ ~-11 ~ air if block ~ ~-10 ~ air if block ~ ~-9 ~ air if block ~ ~-8 ~ air if block ~ ~-7 ~ air if block ~ ~-6 ~ air if block ~ ~-5 ~ air if block ~ ~-4 ~ air if block ~ ~-3 ~ air if block ~ ~-2 ~ air if block ~ ~-1 ~ air if block ~ ~ ~ air run ride @s[m=!c] start_riding @e[tag=dragonmounts,c=1] teleport_ride"
+          ]
+        }
+      }
+    }
+  }
 }
