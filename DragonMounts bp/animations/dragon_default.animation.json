@@ -12,7 +12,7 @@
 					"/effect @s resistance 999999 3 true"
 				],
 				"0.08": [
-					"/execute @s[tag=flying] ~ ~ ~ effect @s slow_falling 1 1 true",
+					"/execute as @s at @s if entity @s[tag=flying] run effect @s slow_falling 1 1 true",
 					"/effect @s resistance 999999 3 true"
 				],
 				"0.16": [
