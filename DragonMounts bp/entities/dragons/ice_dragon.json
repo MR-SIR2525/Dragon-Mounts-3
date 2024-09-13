@@ -34,18 +34,22 @@
 				"dragon_fly_system_assist": "controller.animation.dragon_fly_system_assist"
 			}
 		},
+
 		"component_groups": {
 			"breath_attack": {
-				"minecraft:spawn_entity": [
-					{
-						"min_wait_time": 0,
-						"max_wait_time": 0,
-						"single_use": true,
-						"spawn_entity": "dragonmounts:dragon_breath",
-						"num_to_spawn": 1,
-						"should_leash": false
-					}
-				],
+				"minecraft:spawn_entity": 
+				{
+					"entities": [
+						{
+							"spawn_entity": "dragonmounts:dragon_breath",
+							"min_wait_time": 0,
+							"max_wait_time": 0,
+							"single_use": true,
+							"num_to_spawn": 1,
+							"should_leash": false
+						}
+					]
+				},
 				"minecraft:timer": {
 					"time": 10.4,
 					"looping": true,
@@ -56,16 +60,18 @@
 				}
 			},
 			"fireball_attack": {
-				"minecraft:spawn_entity": [
-					{
-						"min_wait_time": 0,
-						"max_wait_time": 0,
-						"single_use": true,
-						"spawn_entity": "dragonmounts:dragon_fireball",
-						"num_to_spawn": 1,
-						"should_leash": false
-					}
-				],
+				"minecraft:spawn_entity": {
+					"entities": [
+						{
+							"spawn_entity": "dragonmounts:dragon_fireball",
+							"min_wait_time": 0,
+							"max_wait_time": 0,
+							"single_use": true,
+							"num_to_spawn": 1,
+							"should_leash": false
+						}
+					]
+				},
 				"minecraft:timer": {
 					"time": 0.4,
 					"looping": true,
@@ -229,7 +235,7 @@
 				},
 				"minecraft:tameable": {
 					"probability": 0.2,
-					"tameItems": [
+					"tame_items": [
 						"fish",
 						"salmon",
 						"clownfish"
@@ -694,7 +700,7 @@
 			"dragonmounts:death_ani": {
 				"minecraft:transformation": {
 					"into": "dragonmounts:dragon_dissolve<dragonmounts:ice_dragon>",
-					"table": "loot_tables/empty.json",
+					// "table": "loot_tables/empty.json",  //muted cause "not allowed"
 					"delay": 0.0
 				}
 			},
@@ -737,8 +743,9 @@
 				}
 			}
 		},
+
 		"components": {
-			"minecraft:fire_immune": true,
+			"minecraft:fire_immune": {},
 			"minecraft:nameable": {},
 			"minecraft:jump.static": {},
 			"minecraft:can_climb": {},
@@ -800,7 +807,6 @@
 				"within_radius": 64
 			},
 			"minecraft:navigation.walk": {
-				"priority": 0,
 				"can_path_over_water": true,
 				"can_path_from_air": true,
 				"avoid_water": true,
@@ -814,9 +820,9 @@
 				"max_turn": 45.0
 			},
 			"minecraft:breathable": {
-				"totalSupply": 15,
-				"breathesWater": true,
-				"suffocateTime": 0
+				"total_supply": 15,
+				"breathes_water": true,
+				"suffocate_time": 0
 			},
 			// "minecraft:movement": {
 			// 	"value": 0.16
@@ -902,11 +908,9 @@
 					{
 						"on_damage": {
 							"filters": {
-								"all_of": [
-									{
-										"test": "has_damage"
-									}
-								]
+								"any_of": [
+									{"test": "has_damage", "subject": "self", "value":  "attack"},
+									{"test": "has_damage", "subject": "self", "value":  "entity_explosion"}								]
 							},
 							"event": "dragonmounts:dragon_temp_unsit_start"
 						}
@@ -1053,7 +1057,6 @@
 			// 	"value": 0.06
 			// },
 			"minecraft:healable": {
-				"priority": 1,
 				"items": [
 					{
 						"item": "chicken",
@@ -1116,7 +1119,38 @@
 				]
 			}
 		},
+
 		"events": {
+			"minecraft:entity_spawned": {
+				"randomize": [
+					{
+						"weight": 10.0,
+						"add": {
+							"component_groups": [
+								"dragonmounts:dragon_adult",
+								"dragonmounts:dragon_wild"
+							]
+						}
+					},
+					{
+						"weight": 1,
+						"add": {
+							"component_groups": [
+								"dragonmounts:dragon_baby",
+								"dragonmounts:dragon_wild"
+							]
+						}
+					}
+				]
+			},
+			"minecraft:entity_transformed": {
+				"add": {
+					"component_groups": [
+						"dragonmounts:dragon_baby",
+						"dragonmounts:dragon_wild"
+					]
+				}
+			},
 			// "dragonmounts:start_death": {
 			// 	"run_command": {
 			// 		"command": [
@@ -1171,12 +1205,12 @@
 					"component_groups": [
 						"dragonmounts:death_ani"
 					]
-				},
-				"run_command": {
-					"command": [
-						"gamerule mobgriefing false"
-					]
 				}
+				// "queue_command": {
+				// 	"command": [
+				// 		"gamerule mobgriefing false"
+				// 	]
+				// }
 			},
 			// "minecraft:on_calm": {
 			// 	"add": {
@@ -1190,38 +1224,6 @@
 			// 	// 	]
 			// 	// }
 			// },
-			"minecraft:entity_spawned": {
-				"randomize": [
-					{
-						"weight": 10.0,
-						"remove": {},
-						"add": {
-							"component_groups": [
-								"dragonmounts:dragon_adult",
-								"dragonmounts:dragon_wild"
-							]
-						}
-					},
-					{
-						"weight": 0.0,
-						"remove": {},
-						"add": {
-							"component_groups": [
-								"dragonmounts:dragon_baby",
-								"dragonmounts:dragon_wild"
-							]
-						}
-					}
-				]
-			},
-			"minecraft:entity_transformed": {
-				"add": {
-					"component_groups": [
-						"dragonmounts:dragon_baby",
-						"dragonmounts:dragon_wild"
-					]
-				}
-			},
 			"dragonmounts:dragon_grow_up": {
 				"sequence": [
 					{
