@@ -1,34 +1,34 @@
 {
-	"format_version": 2,
-	"header": {
-		"name": "pack.name",
-		"description": "pack.description",
-		"uuid": "eb5b4b76-e570-4d7e-8d8f-dc011d0fa899",
-		"version": [1, 4, 26],
-		"min_engine_version": [1, 16, 100],
-		"pack_scope": "world"
-	},
-	"modules": [
-		{
-			"description": "By.Lintha",
-			"uuid": "a0663269-cdab-48f3-8bae-d26718175464",
-			"version": [1, 4, 26],
-			"type": "resources"
-		}
+    "format_version": 2,
+    "header": {
+        "name": "§lDragon Mounts 3 §aPREVIEW v1.4.261",
+        "description": "Please be sure to open the §cExperiment Option§r before loading this Addon. MRxSIR's dev version.",
+        "uuid": "eb5b4b76-e570-4d7e-8d8f-dc011d0fa899",
+        "version": [1, 4, 261],
+        "min_engine_version": [1, 20, 30],
+        "pack_scope": "world"
+    },
+    "modules": [
+        {
+            "description": "By.Lintha",
+            "uuid": "a0663269-cdab-48f3-8bae-d26718175464",
+            "version": [1, 4, 261],
+            "type": "resources"
+        }
     ],
     "metadata": {
         "authors": [
-			"Lintha"
+            "Lintha"
         ]
     },
-	"dependencies": [
-		{
-			"version": [1, 4, 26],
-			"uuid": "18b40e43-faf1-4a38-ac37-2c0fdeb77b16"
-		},
-		{
-			"version": [1, 4, 26],
-			"uuid": "88439c16-0cbf-4394-a033-60ac6c5a889a"
-		}
-	]
+    "dependencies": [
+        {
+            "version": [1, 4, 261],
+            "uuid": "18b40e43-faf1-4a38-ac37-2c0fdeb77b16"
+        },
+        {
+            "version": [1, 4, 261],
+            "uuid": "88439c16-0cbf-4394-a033-60ac6c5a889a"
+        }
+    ]
 }
