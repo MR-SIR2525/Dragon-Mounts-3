@@ -12,7 +12,7 @@
         },
         "doing": {
           "on_entry": [
-            "@s dragonmounts:frame_a"
+            "/event entity @s dragonmounts:frame_a"
           ]
         }
       }

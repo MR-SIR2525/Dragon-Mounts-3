@@ -33,7 +33,7 @@
             "/effect @s levitation 1 8 true"//{{sic}}
           ],
           "on_exit": [
-            "@s dragonmounts:breath_attack"
+            "/event entity @s dragonmounts:breath_attack"
           ]
         },
         "fireball": {
@@ -49,7 +49,7 @@
             "/effect @s levitation 1 16 true"//{{sic}}
           ],
           "on_exit": [
-            "@s dragonmounts:fireball_attack"
+            "/event entity @s dragonmounts:fireball_attack"
           ]
         },
         "up": {

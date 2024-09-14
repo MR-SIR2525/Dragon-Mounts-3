@@ -7,7 +7,7 @@
         "fly": {
           "animations": [
             {
-              "dragon_shoot": "query.get_equipped_item_name == 'dragon_breath' || query.get_equipped_item_name == 'blaze_rod'"
+              "dragon_shoot": "query.is_item_name_any == 'dragon_breath' || query.is_item_name_any == 'blaze_rod'"
             },
             "dragon_fly"
           ],
